@@ -39,7 +39,7 @@ val_acc = []
 
 
 
-parser = argparse.ArgumentParser(description='PyTorch MVCNN Training')
+parser = argparse.ArgumentParser(description='PyTorch Training')
 
 parser.add_argument('--resume', default='', type=str, metavar='PATH',
                     help='path to latest checkpoint (default: none)')
@@ -90,7 +90,7 @@ def main():
     dataset_train.shuffle()
     dataset_val.shuffle()
     dataset_test.shuffle()
-    tra_data_size, val_data_size, test_data_size= dataset_train.size(), dataset_val.size(), dataset_test.size()     # dataset_train.size = 130, validation size: 20 , test_data_size:32
+    tra_data_size, val_data_size, test_data_size= dataset_train.size(), dataset_val.size(), dataset_test.size()   
     print ('training size:', tra_data_size)
     print ('validation size:', val_data_size)
     print ('testing size:', test_data_size)
@@ -385,7 +385,6 @@ def tests(dataset_val, mvcnn, criterion, optimizer, batch_size):
     return top1.avg
 
 def adjust_learning_rate(optimizer, epoch):
-    """Sets the learning rate to the initial LR decayed by 10 every 30 epochs"""
     lr = args.lr * (0.1 ** (epoch // 60))
     for param_group in optimizer.param_groups:
         param_group['lr'] = lr
