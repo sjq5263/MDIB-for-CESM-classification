@@ -9,7 +9,7 @@ import torch.backends.cudnn as cudnn
 import torch.optim as optim
 import torch.utils.data
 from torch.autograd import Variable
-from solver43 import NetwithIB
+from solver import NetwithIB
 from data_processing import Dataset
 import argparse
 import os
