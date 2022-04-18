@@ -2,7 +2,7 @@
 import numpy as np
 import time
 import torch
-import math  # sjq add  改变了solver43里 beta的大小
+import math  # 
 import torch.nn as nn
 from torch.nn.parallel import DataParallel# for multi-GPU training
 import torch.backends.cudnn as cudnn
