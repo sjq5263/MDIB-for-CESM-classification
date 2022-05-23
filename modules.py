@@ -45,7 +45,7 @@ class Decoder(nn.Module):
             nn.ReLU(True),
             nn.Linear(1024, 1024),
             nn.ReLU(True),
-            nn.Linear(1024, 2048)
+            nn.Linear(1024, 512)
         )
 
     def forward(self, z):
